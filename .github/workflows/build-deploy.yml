@@ -9,8 +9,18 @@ on:
         branches:
             - 'main'
             - 'testing_how_to_do_tests'
+
 jobs:
     job1:
+        env:
+            DATABASE_HOSTNAME: localhost
+            DATABASE_PORT: 5432
+            DATABASE_PASSWORD: password123
+            DATABASE_NAME: fastapi
+            DATABASE_USERNAME: postgres
+            SECRET_KEY: hello
+            ALGORITHM: HS256
+            ACCESS_TOKEN_EXPIRE_MINUTES: 30
         runs-on: ubuntu-latest
         steps:
             - name: pulling git repo
@@ -21,7 +31,7 @@ jobs:
                 python-version: '3.11'
             - name: update pip
               run: python -m pip install --upgrade pip
-            - name: intall all dependencies
+            - name: install all dependencies
               run: pip install -r requirements.txt
             - name: test with pytest
               run: |
