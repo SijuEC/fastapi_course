@@ -11,7 +11,7 @@ on:
             - 'testing_how_to_do_tests'
 
 jobs:
-    job1:
+    build:
         environment:
             name: testing
         env:
