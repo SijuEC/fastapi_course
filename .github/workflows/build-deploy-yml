@@ -1,0 +1,19 @@
+name: Build and Deploy Code
+
+on:
+    push:
+        branches:
+            - 'main'
+            - 'testing_how_to_do_tests'
+    pull_request:
+        branches:
+            - 'main'
+            - 'testing_how_to_do_tests'
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: pulling git repo
+            - uses: actions/checkout@v4            
+            - name: say hi to sanjeev
+            - run: echo 'hello sanjeev'
